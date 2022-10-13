@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; data mining</title>
+    <title>UTS &#8212; data mining</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -138,6 +138,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas.html">
    Tugas-1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ujian
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   UTS
   </a>
  </li>
 </ul>
@@ -324,50 +336,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>UTS</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -375,7 +360,807 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>#uts</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="uts">
+<h1>UTS<a class="headerlink" href="#uts" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataUTS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/ZuniAmandaDewi/dataset/main/dataR2.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataUTS</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-c2dee989-7738-48fa-9df7-3aaf2152fc1c">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Age</th>
+      <th>BMI</th>
+      <th>Glucose</th>
+      <th>Insulin</th>
+      <th>HOMA</th>
+      <th>Leptin</th>
+      <th>Adiponectin</th>
+      <th>Resistin</th>
+      <th>MCP.1</th>
+      <th>Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>48</td>
+      <td>23.500000</td>
+      <td>70</td>
+      <td>2.707</td>
+      <td>0.467409</td>
+      <td>8.8071</td>
+      <td>9.702400</td>
+      <td>7.99585</td>
+      <td>417.114</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>83</td>
+      <td>20.690495</td>
+      <td>92</td>
+      <td>3.115</td>
+      <td>0.706897</td>
+      <td>8.8438</td>
+      <td>5.429285</td>
+      <td>4.06405</td>
+      <td>468.786</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>82</td>
+      <td>23.124670</td>
+      <td>91</td>
+      <td>4.498</td>
+      <td>1.009651</td>
+      <td>17.9393</td>
+      <td>22.432040</td>
+      <td>9.27715</td>
+      <td>554.697</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>68</td>
+      <td>21.367521</td>
+      <td>77</td>
+      <td>3.226</td>
+      <td>0.612725</td>
+      <td>9.8827</td>
+      <td>7.169560</td>
+      <td>12.76600</td>
+      <td>928.220</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>86</td>
+      <td>21.111111</td>
+      <td>92</td>
+      <td>3.549</td>
+      <td>0.805386</td>
+      <td>6.6994</td>
+      <td>4.819240</td>
+      <td>10.57635</td>
+      <td>773.920</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>45</td>
+      <td>26.850000</td>
+      <td>92</td>
+      <td>3.330</td>
+      <td>0.755688</td>
+      <td>54.6800</td>
+      <td>12.100000</td>
+      <td>10.96000</td>
+      <td>268.230</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>62</td>
+      <td>26.840000</td>
+      <td>100</td>
+      <td>4.530</td>
+      <td>1.117400</td>
+      <td>12.4500</td>
+      <td>21.420000</td>
+      <td>7.32000</td>
+      <td>330.160</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>65</td>
+      <td>32.050000</td>
+      <td>97</td>
+      <td>5.730</td>
+      <td>1.370998</td>
+      <td>61.4800</td>
+      <td>22.540000</td>
+      <td>10.33000</td>
+      <td>314.050</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>72</td>
+      <td>25.590000</td>
+      <td>82</td>
+      <td>2.820</td>
+      <td>0.570392</td>
+      <td>24.9600</td>
+      <td>33.750000</td>
+      <td>3.27000</td>
+      <td>392.460</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>86</td>
+      <td>27.180000</td>
+      <td>138</td>
+      <td>19.910</td>
+      <td>6.777364</td>
+      <td>90.2800</td>
+      <td>14.110000</td>
+      <td>4.35000</td>
+      <td>90.090</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>116 rows × 10 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c2dee989-7738-48fa-9df7-3aaf2152fc1c')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-c2dee989-7738-48fa-9df7-3aaf2152fc1c button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-c2dee989-7738-48fa-9df7-3aaf2152fc1c');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+</div></div>
+</div>
+<p>##Naive Bayes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Memisahkan dataset dalam variabel independen dan dependen</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">dataUTS</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dataUTS</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Memisahkan dataset menjadi Training set dan Test set</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">82</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fitur Scaling untuk membawa variabel dalam satu skala</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Memasang Klasifikasi Naive Bayes ke set Pelatihan dengan kernel linier</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="n">nvclassifier</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">nvclassifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Memprediksi hasil set Tes</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">nvclassifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 1 1 1 2 1 1 2 1 1 1 1 1 1 1 2 1 1 1 1 2 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># melihat nilai aktual dan prediksi berdampingan</span>
+<span class="n">y_compare</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+<span class="c1"># nilai aktual di sisi kiri dan nilai prediksi di sisi kanan</span>
+<span class="c1"># mencetak 5 nilai teratas</span>
+<span class="n">y_compare</span><span class="p">[:</span><span class="mi">5</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 1],
+       [1, 1],
+       [2, 1],
+       [2, 1],
+       [1, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat Matriks confusion</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[10  1]
+ [ 9  4]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menemukan akurasi dari matriks confusion</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">corrPred</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">falsePred</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+            <span class="n">corrPred</span> <span class="o">+=</span><span class="n">cm</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">c</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">falsePred</span> <span class="o">+=</span> <span class="n">cm</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">c</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Correct predictions: &#39;</span><span class="p">,</span> <span class="n">corrPred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;False predictions&#39;</span><span class="p">,</span> <span class="n">falsePred</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">Accuracy of the Naive Bayes Clasification is: &#39;</span><span class="p">,</span> <span class="n">corrPred</span><span class="o">/</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>      
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correct predictions:  14
+False predictions 10
+
+
+Accuracy of the Naive Bayes Clasification is:  0.5833333333333334
+</pre></div>
+</div>
+</div>
+</div>
+<p>##Decision Tree</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#mengetahui jumlah data setiap  class</span>
+<span class="n">dataUTS</span><span class="o">.</span><span class="n">Classification</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2    64
+1    52
+Name: Classification, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Memvisualisasikan fitur kumpulan data untuk menemukan pola untuk menyelesaikan tugas</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dataUTS</span><span class="p">[</span><span class="s1">&#39;Leptin&#39;</span><span class="p">],</span><span class="n">dataUTS</span><span class="p">[</span><span class="s1">&#39;Adiponectin&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/UTS_17_0.png" src="../_images/UTS_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Menggunakan Seaborn lib untuk memvisualisasikan 2 fitur berdasarkan variabel target.</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">dataUTS</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;Classification&#39;</span><span class="p">)</span> \
+   <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">,</span> <span class="s1">&#39;Leptin&#39;</span><span class="p">,</span><span class="s1">&#39;Adiponectin&#39;</span><span class="p">)</span> \
+   <span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/UTS_18_0.png" src="../_images/UTS_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataUTS</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 116 entries, 0 to 115
+Data columns (total 10 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   Age             116 non-null    int64  
+ 1   BMI             116 non-null    float64
+ 2   Glucose         116 non-null    int64  
+ 3   Insulin         116 non-null    float64
+ 4   HOMA            116 non-null    float64
+ 5   Leptin          116 non-null    float64
+ 6   Adiponectin     116 non-null    float64
+ 7   Resistin        116 non-null    float64
+ 8   MCP.1           116 non-null    float64
+ 9   Classification  116 non-null    int64  
+dtypes: float64(7), int64(3)
+memory usage: 9.2 KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Sekarang coba buat model untuk menyelesaikan tugas kita</span>
+<span class="c1">#Sesuai analisis kami, kami tidak dapat menemukan banyak informasi dari fitur baru yang dapat membantu dalam memecahkan masalah kami ...</span>
+<span class="c1">#Untuk menyelesaikan tugas kami, saya telah memilih beberapa fitur di antara semuanya untuk membangun model terbaik kami..</span>
+
+<span class="sd">&#39;&#39;&#39;Impor beberapa perpustakaan untuk membuat pengklasifikasi pohon keputusan dan memvisualisasikan struktur pohon&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+<span class="kn">import</span> <span class="nn">graphviz</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">cross_val_score</span>
+
+
+<span class="sd">&#39;&#39;&#39;Di sini kita memisahkan variabel independen atau variabel target dari dataset Iris&#39;&#39;&#39;</span>
+
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">dataUTS</span><span class="p">[[</span><span class="s1">&#39;Leptin&#39;</span><span class="p">,</span> <span class="s1">&#39;Adiponectin&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dataUTS</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span>
+
+
+<span class="c1">#Sebelum melatih model, kami telah membagi data kami menjadi Kumpulan Data Latihan Aktual dan Kumpulan Data Uji Aktual untuk tujuan pelatihan dan validasi...</span>
+
+<span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span> <span class="n">Ytrain</span><span class="p">,</span> <span class="n">Ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.30</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1">#spliting data into validation train and validation test</span>
+<span class="n">Xt</span><span class="p">,</span> <span class="n">Xcv</span><span class="p">,</span> <span class="n">Yt</span><span class="p">,</span> <span class="n">Ycv</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">Ytrain</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+
+<span class="sd">&#39;&#39;&#39;Sekarang kami telah membuat pengklasifikasi pohon keputusan dan melatihnya dengan dataset pelatihan.&#39;&#39;&#39;</span>
+
+
+<span class="n">Iris_clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span><span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Iris_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xt</span><span class="p">,</span> <span class="n">Yt</span><span class="p">)</span>
+
+<span class="c1">#Memvisualisasikan Pohon yang terbentuk pada dataset kereta</span>
+
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">Iris_clf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0.3804347826086957, 0.95, &#39;X[0] &lt;= 7.306\ngini = 0.481\nsamples = 72\nvalue = [29, 43]&#39;),
+ Text(0.33695652173913043, 0.85, &#39;gini = 0.0\nsamples = 4\nvalue = [4, 0]&#39;),
+ Text(0.42391304347826086, 0.85, &#39;X[0] &lt;= 15.017\ngini = 0.465\nsamples = 68\nvalue = [25, 43]&#39;),
+ Text(0.17391304347826086, 0.75, &#39;X[1] &lt;= 9.757\ngini = 0.308\nsamples = 21\nvalue = [4, 17]&#39;),
+ Text(0.13043478260869565, 0.65, &#39;X[1] &lt;= 9.552\ngini = 0.375\nsamples = 16\nvalue = [4, 12]&#39;),
+ Text(0.08695652173913043, 0.55, &#39;X[0] &lt;= 7.933\ngini = 0.32\nsamples = 15\nvalue = [3, 12]&#39;),
+ Text(0.043478260869565216, 0.45, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.13043478260869565, 0.45, &#39;X[1] &lt;= 5.454\ngini = 0.245\nsamples = 14\nvalue = [2, 12]&#39;),
+ Text(0.08695652173913043, 0.35, &#39;X[1] &lt;= 4.919\ngini = 0.444\nsamples = 6\nvalue = [2, 4]&#39;),
+ Text(0.043478260869565216, 0.25, &#39;gini = 0.0\nsamples = 3\nvalue = [0, 3]&#39;),
+ Text(0.13043478260869565, 0.25, &#39;X[0] &lt;= 12.515\ngini = 0.444\nsamples = 3\nvalue = [2, 1]&#39;),
+ Text(0.08695652173913043, 0.15, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;),
+ Text(0.17391304347826086, 0.15, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.17391304347826086, 0.35, &#39;gini = 0.0\nsamples = 8\nvalue = [0, 8]&#39;),
+ Text(0.17391304347826086, 0.55, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.21739130434782608, 0.65, &#39;gini = 0.0\nsamples = 5\nvalue = [0, 5]&#39;),
+ Text(0.6739130434782609, 0.75, &#39;X[0] &lt;= 16.565\ngini = 0.494\nsamples = 47\nvalue = [21, 26]&#39;),
+ Text(0.6304347826086957, 0.65, &#39;gini = 0.0\nsamples = 3\nvalue = [3, 0]&#39;),
+ Text(0.717391304347826, 0.65, &#39;X[1] &lt;= 9.635\ngini = 0.483\nsamples = 44\nvalue = [18, 26]&#39;),
+ Text(0.5217391304347826, 0.55, &#39;X[1] &lt;= 6.721\ngini = 0.497\nsamples = 28\nvalue = [15, 13]&#39;),
+ Text(0.43478260869565216, 0.45, &#39;X[1] &lt;= 5.229\ngini = 0.488\nsamples = 19\nvalue = [8, 11]&#39;),
+ Text(0.391304347826087, 0.35, &#39;X[1] &lt;= 4.456\ngini = 0.498\nsamples = 15\nvalue = [8, 7]&#39;),
+ Text(0.34782608695652173, 0.25, &#39;X[0] &lt;= 25.554\ngini = 0.463\nsamples = 11\nvalue = [4, 7]&#39;),
+ Text(0.2608695652173913, 0.15, &#39;X[1] &lt;= 3.743\ngini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
+ Text(0.21739130434782608, 0.05, &#39;gini = 0.0\nsamples = 3\nvalue = [3, 0]&#39;),
+ Text(0.30434782608695654, 0.05, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.43478260869565216, 0.15, &#39;X[0] &lt;= 59.713\ngini = 0.245\nsamples = 7\nvalue = [1, 6]&#39;),
+ Text(0.391304347826087, 0.05, &#39;gini = 0.0\nsamples = 6\nvalue = [0, 6]&#39;),
+ Text(0.4782608695652174, 0.05, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.43478260869565216, 0.25, &#39;gini = 0.0\nsamples = 4\nvalue = [4, 0]&#39;),
+ Text(0.4782608695652174, 0.35, &#39;gini = 0.0\nsamples = 4\nvalue = [0, 4]&#39;),
+ Text(0.6086956521739131, 0.45, &#39;X[0] &lt;= 23.72\ngini = 0.346\nsamples = 9\nvalue = [7, 2]&#39;),
+ Text(0.5652173913043478, 0.35, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.6521739130434783, 0.35, &#39;X[0] &lt;= 63.692\ngini = 0.219\nsamples = 8\nvalue = [7, 1]&#39;),
+ Text(0.6086956521739131, 0.25, &#39;gini = 0.0\nsamples = 6\nvalue = [6, 0]&#39;),
+ Text(0.6956521739130435, 0.25, &#39;X[0] &lt;= 77.182\ngini = 0.5\nsamples = 2\nvalue = [1, 1]&#39;),
+ Text(0.6521739130434783, 0.15, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.7391304347826086, 0.15, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.9130434782608695, 0.55, &#39;X[1] &lt;= 22.001\ngini = 0.305\nsamples = 16\nvalue = [3, 13]&#39;),
+ Text(0.8695652173913043, 0.45, &#39;X[1] &lt;= 10.496\ngini = 0.133\nsamples = 14\nvalue = [1, 13]&#39;),
+ Text(0.8260869565217391, 0.35, &#39;X[0] &lt;= 38.804\ngini = 0.444\nsamples = 3\nvalue = [1, 2]&#39;),
+ Text(0.782608695652174, 0.25, &#39;gini = 0.0\nsamples = 2\nvalue = [0, 2]&#39;),
+ Text(0.8695652173913043, 0.25, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.9130434782608695, 0.35, &#39;gini = 0.0\nsamples = 11\nvalue = [0, 11]&#39;),
+ Text(0.9565217391304348, 0.45, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;)]
+</pre></div>
+</div>
+<img alt="../_images/UTS_20_1.png" src="../_images/UTS_20_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Memvisualisasikan Pohon Keputusan menggunakan pustaka graphviz</span>
+
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">Iris_clf</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>
+<span class="n">graph</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/UTS_21_0.svg" src="../_images/UTS_21_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Karena model kami telah dilatih....</span>
+<span class="c1">#Sekarang kita dapat memvalidasi pohon keputusan kita menggunakan metode validasi silang untuk mendapatkan akurasi atau skor kinerja model kita.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy score is:&#39;</span><span class="p">,</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">Iris_clf</span><span class="p">,</span> <span class="n">Xt</span><span class="p">,</span> <span class="n">Yt</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy score is: 0.5416666666666666
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Memeriksa data uji validasi pada model terlatih kami dan mendapatkan metrik kinerja</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">multilabel_confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span>
+
+<span class="n">Y_hat</span> <span class="o">=</span> <span class="n">Iris_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xcv</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy score for validation test data is:&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">Ycv</span><span class="p">,</span> <span class="n">Y_hat</span><span class="p">))</span>
+<span class="n">multilabel_confusion_matrix</span><span class="p">(</span><span class="n">Ycv</span> <span class="p">,</span> <span class="n">Y_hat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy score for validation test data is: 0.3333333333333333
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[1, 2],
+        [4, 2]],
+
+       [[2, 4],
+        [2, 1]]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Memeriksa kinerja model kami pada data uji aktual yang tidak terlihat..</span>
+<span class="n">YT_hat</span> <span class="o">=</span> <span class="n">Iris_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+<span class="n">YT_hat</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model Accuracy Score on totally unseen data(Xtest) is:&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">Ytest</span><span class="p">,</span> <span class="n">YT_hat</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+<span class="n">multilabel_confusion_matrix</span><span class="p">(</span><span class="n">Ytest</span> <span class="p">,</span> <span class="n">YT_hat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model Accuracy Score on totally unseen data(Xtest) is: 57.14285714285714 %
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[10,  8],
+        [ 7, 10]],
+
+       [[10,  7],
+        [ 8, 10]]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Model pelatihan pada data kereta yang sebenarnya... &#39;&#39;&#39;</span>
+<span class="n">Iris_Fclf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span><span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Iris_Fclf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">,</span> <span class="n">Ytrain</span><span class="p">)</span>
+
+<span class="c1">#Visualisasikan struktur pohon..</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">Iris_Fclf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0.54, 0.95, &#39;X[0] &lt;= 7.306\ngini = 0.491\nsamples = 81\nvalue = [35, 46]&#39;),
+ Text(0.5, 0.85, &#39;gini = 0.0\nsamples = 4\nvalue = [4, 0]&#39;),
+ Text(0.58, 0.85, &#39;X[1] &lt;= 9.757\ngini = 0.481\nsamples = 77\nvalue = [31, 46]&#39;),
+ Text(0.32, 0.75, &#39;X[1] &lt;= 6.79\ngini = 0.5\nsamples = 49\nvalue = [24, 25]&#39;),
+ Text(0.2, 0.65, &#39;X[1] &lt;= 5.454\ngini = 0.452\nsamples = 29\nvalue = [10, 19]&#39;),
+ Text(0.16, 0.55, &#39;X[1] &lt;= 4.783\ngini = 0.496\nsamples = 22\nvalue = [10, 12]&#39;),
+ Text(0.08, 0.45, &#39;X[0] &lt;= 19.045\ngini = 0.444\nsamples = 15\nvalue = [5, 10]&#39;),
+ Text(0.04, 0.35, &#39;gini = 0.0\nsamples = 4\nvalue = [0, 4]&#39;),
+ Text(0.12, 0.35, &#39;X[0] &lt;= 25.554\ngini = 0.496\nsamples = 11\nvalue = [5, 6]&#39;),
+ Text(0.08, 0.25, &#39;gini = 0.0\nsamples = 3\nvalue = [3, 0]&#39;),
+ Text(0.16, 0.25, &#39;X[1] &lt;= 3.726\ngini = 0.375\nsamples = 8\nvalue = [2, 6]&#39;),
+ Text(0.12, 0.15, &#39;gini = 0.0\nsamples = 5\nvalue = [0, 5]&#39;),
+ Text(0.2, 0.15, &#39;X[0] &lt;= 36.28\ngini = 0.444\nsamples = 3\nvalue = [2, 1]&#39;),
+ Text(0.16, 0.05, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.24, 0.05, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;),
+ Text(0.24, 0.45, &#39;X[1] &lt;= 5.194\ngini = 0.408\nsamples = 7\nvalue = [5, 2]&#39;),
+ Text(0.2, 0.35, &#39;gini = 0.0\nsamples = 4\nvalue = [4, 0]&#39;),
+ Text(0.28, 0.35, &#39;X[0] &lt;= 11.796\ngini = 0.444\nsamples = 3\nvalue = [1, 2]&#39;),
+ Text(0.24, 0.25, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.32, 0.25, &#39;gini = 0.0\nsamples = 2\nvalue = [0, 2]&#39;),
+ Text(0.24, 0.55, &#39;gini = 0.0\nsamples = 7\nvalue = [0, 7]&#39;),
+ Text(0.44, 0.65, &#39;X[1] &lt;= 8.357\ngini = 0.42\nsamples = 20\nvalue = [14, 6]&#39;),
+ Text(0.36, 0.55, &#39;X[0] &lt;= 63.692\ngini = 0.165\nsamples = 11\nvalue = [10, 1]&#39;),
+ Text(0.32, 0.45, &#39;gini = 0.0\nsamples = 9\nvalue = [9, 0]&#39;),
+ Text(0.4, 0.45, &#39;X[1] &lt;= 7.349\ngini = 0.5\nsamples = 2\nvalue = [1, 1]&#39;),
+ Text(0.36, 0.35, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.44, 0.35, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.52, 0.55, &#39;X[0] &lt;= 12.49\ngini = 0.494\nsamples = 9\nvalue = [4, 5]&#39;),
+ Text(0.48, 0.45, &#39;gini = 0.0\nsamples = 3\nvalue = [0, 3]&#39;),
+ Text(0.56, 0.45, &#39;X[1] &lt;= 8.515\ngini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
+ Text(0.52, 0.35, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.6, 0.35, &#39;X[0] &lt;= 16.907\ngini = 0.32\nsamples = 5\nvalue = [4, 1]&#39;),
+ Text(0.56, 0.25, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;),
+ Text(0.64, 0.25, &#39;X[0] &lt;= 27.29\ngini = 0.444\nsamples = 3\nvalue = [2, 1]&#39;),
+ Text(0.6, 0.15, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.68, 0.15, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;),
+ Text(0.84, 0.75, &#39;X[1] &lt;= 29.3\ngini = 0.375\nsamples = 28\nvalue = [7, 21]&#39;),
+ Text(0.8, 0.65, &#39;X[0] &lt;= 18.05\ngini = 0.311\nsamples = 26\nvalue = [5, 21]&#39;),
+ Text(0.68, 0.55, &#39;X[0] &lt;= 14.113\ngini = 0.444\nsamples = 12\nvalue = [4, 8]&#39;),
+ Text(0.64, 0.45, &#39;gini = 0.0\nsamples = 6\nvalue = [0, 6]&#39;),
+ Text(0.72, 0.45, &#39;X[1] &lt;= 10.901\ngini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
+ Text(0.68, 0.35, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.76, 0.35, &#39;X[0] &lt;= 17.499\ngini = 0.32\nsamples = 5\nvalue = [4, 1]&#39;),
+ Text(0.72, 0.25, &#39;gini = 0.0\nsamples = 3\nvalue = [3, 0]&#39;),
+ Text(0.8, 0.25, &#39;X[0] &lt;= 17.905\ngini = 0.5\nsamples = 2\nvalue = [1, 1]&#39;),
+ Text(0.76, 0.15, &#39;gini = 0.0\nsamples = 1\nvalue = [0, 1]&#39;),
+ Text(0.84, 0.15, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.92, 0.55, &#39;X[1] &lt;= 10.496\ngini = 0.133\nsamples = 14\nvalue = [1, 13]&#39;),
+ Text(0.88, 0.45, &#39;X[1] &lt;= 10.309\ngini = 0.444\nsamples = 3\nvalue = [1, 2]&#39;),
+ Text(0.84, 0.35, &#39;gini = 0.0\nsamples = 2\nvalue = [0, 2]&#39;),
+ Text(0.92, 0.35, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(0.96, 0.45, &#39;gini = 0.0\nsamples = 11\nvalue = [0, 11]&#39;),
+ Text(0.88, 0.65, &#39;gini = 0.0\nsamples = 2\nvalue = [2, 0]&#39;)]
+</pre></div>
+</div>
+<img alt="../_images/UTS_25_1.png" src="../_images/UTS_25_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Pembuatan pohon keputusan akhir untuk diterapkan dalam kasus dunia nyata....</span>
+
+<span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">Iris_Fclf</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span>
+<span class="n">graph</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/UTS_26_0.svg" src="../_images/UTS_26_0.svg" /></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Memeriksa performa model pada data Uji Aktual...</span>
+
+<span class="n">YT_Fhat</span> <span class="o">=</span> <span class="n">Iris_Fclf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+<span class="n">YT_Fhat</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model Accuracy Score on totally unseen data(Xtest) is:&#39;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">Ytest</span><span class="p">,</span> <span class="n">YT_Fhat</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;%&#39;</span><span class="p">)</span>
+<span class="n">multilabel_confusion_matrix</span><span class="p">(</span><span class="n">Ytest</span> <span class="p">,</span> <span class="n">YT_Fhat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model Accuracy Score on totally unseen data(Xtest) is: 45.714285714285715 %
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[10,  8],
+        [11,  6]],
+
+       [[ 6, 11],
+        [ 8, 10]]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Pengujian untuk poin baru kecuali dari Dataset</span>
+
+<span class="n">Test_point</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">10.4</span><span class="p">,</span><span class="mf">3.0</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">6.5</span><span class="p">,</span><span class="mf">2.8</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">5.1</span><span class="p">,</span><span class="mf">2.5</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">5.1</span><span class="p">,</span><span class="mf">3.3</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span><span class="mf">2.7</span><span class="p">],</span>
+             <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span><span class="mf">2.2</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Iris_Fclf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Test_point</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 1 1 1 1 1]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/sklearn/base.py:451: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
+  &quot;X does not have valid feature names, but&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
